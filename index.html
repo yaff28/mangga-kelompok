@@ -1416,6 +1416,438 @@
                     </div>
                 </div>
 
+
+    <title>Laporan Praktikum - Pencampuran Minyak dan Air</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        overflow: hidden;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .header p {
+        font-size: 1.2em;
+        opacity: 0.9;
+    }
+
+    .content {
+        padding: 40px;
+    }
+
+    .section {
+        margin-bottom: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 15px;
+        border-left: 5px solid #667eea;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+
+    .section-title {
+        color: #667eea;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-number {
+        background: #667eea;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .objective {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 15px;
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+
+    .materials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .material-item {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .material-item:hover {
+        transform: scale(1.05);
+    }
+
+    .material-icon {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .procedure-list {
+        counter-reset: step-counter;
+        list-style: none;
+    }
+
+    .procedure-list li {
+        counter-increment: step-counter;
+        padding: 20px;
+        margin-bottom: 15px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        position: relative;
+        padding-left: 70px;
+    }
+
+    .procedure-list li::before {
+        content: counter(step-counter);
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    .prediction-box {
+        background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        padding: 25px;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+
+    .prediction-item {
+        background: white;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .prediction-icon {
+        font-size: 1.5em;
+    }
+
+    .conclusion-box {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        padding: 30px;
+        border-radius: 15px;
+        color: #333;
+    }
+
+    .conclusion-main {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #667eea;
+    }
+
+    .reason-cards {
+        display: grid;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .reason-card {
+        background: rgba(255,255,255,0.9);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid #fa709a;
+    }
+
+    .reason-card h4 {
+        color: #fa709a;
+        margin-bottom: 10px;
+    }
+
+    .video-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .video-container {
+        margin-top: 20px;
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 15px;
+        background: rgba(0,0,0,0.2);
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 15px;
+    }
+
+    .video-placeholder {
+        padding: 60px 20px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 15px;
+        border: 2px dashed rgba(255,255,255,0.3);
+    }
+
+    .video-placeholder p {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .video-instruction {
+        font-size: 0.9em;
+        opacity: 0.8;
+        font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+        .header h1 {
+            font-size: 1.8em;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .section {
+            padding: 20px;
+        }
+
+        .materials-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 LAPORAN PRAKTIKUM</h1>
+            <p>Pencampuran Minyak dan Air</p>
+        </div>
+
+```
+    <div class="content">
+        <!-- Tujuan -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">1</span>
+                Tujuan Percobaan
+            </h2>
+            <div class="objective">
+                🎯 Mengetahui alasan minyak tidak dapat bercampur dengan air
+            </div>
+        </div>
+
+        <!-- Alat dan Bahan -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">2</span>
+                Alat dan Bahan
+            </h2>
+            <div class="materials-grid">
+                <div class="material-item">
+                    <div class="material-icon">🥤</div>
+                    <strong>Gelas Ukur</strong>
+                </div>
+                <div class="material-item">
+                    <div class="material-icon">⚗️</div>
+                    <strong>Gelas Beaker</strong>
+                </div>
+                <div class="material-item">
+                    <div class="material-icon">🧴</div>
+                    <strong>Minyak Parfum</strong>
+                    <p style="font-size: 0.9em; color: #666;">(Fragrance Oil)</p>
+                </div>
+                <div class="material-item">
+                    <div class="material-icon">💧</div>
+                    <strong>Air</strong>
+                </div>
+                <div class="material-item">
+                    <div class="material-icon">🏷️</div>
+                    <strong>Label</strong>
+                    <p style="font-size: 0.9em; color: #666;">(Penanda)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prosedur -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">3</span>
+                Prosedur Percobaan
+            </h2>
+            <ol class="procedure-list">
+                <li>Siapkan satu gelas ukur yang bersih dan kering</li>
+                <li>Tuangkan sejumlah minyak parfum ke dalam gelas ukur</li>
+                <li>Tambahkan air ke dalam gelas ukur secara perlahan</li>
+                <li>Amati posisi minyak dan air di dalam gelas ukur</li>
+                <li>Diamkan campuran selama beberapa menit tanpa diaduk</li>
+                <li>Catat hasil pengamatan</li>
+            </ol>
+        </div>
+
+<div class="section">
+            <h2 class="section-title">
+                <span class="section-number">📹</span>
+                Video Praktikum
+            </h2>
+            <div class="video-section">
+                <h3 style="margin-bottom: 15px;">🎬 Dokumentasi Percobaan</h3>
+               
+                    
+                    <div class="video-placeholder">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/jndxEcFpzIQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prediksi -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">4</span>
+                Prediksi Hasil Pengamatan
+            </h2>
+            <div class="prediction-box">
+                <div class="prediction-item">
+                    <span class="prediction-icon">🔬</span>
+                    <span>Minyak dan air membentuk dua lapisan terpisah</span>
+                </div>
+                <div class="prediction-item">
+                    <span class="prediction-icon">⬆️</span>
+                    <span>Lapisan minyak berada di atas air karena massa jenis minyak lebih kecil</span>
+                </div>
+                <div class="prediction-item">
+                    <span class="prediction-icon">⏱️</span>
+                    <span>Tidak terjadi pencampuran walau didiamkan beberapa menit</span>
+                </div>
+                <div class="prediction-item">
+                    <span class="prediction-icon">👁️</span>
+                    <span>Batas antara minyak dan air terlihat jelas</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kesimpulan -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">5</span>
+                Kesimpulan
+            </h2>
+            <div class="conclusion-box">
+                <div class="conclusion-main">
+                    ✅ Minyak tidak bercampur dengan air karena perbedaan sifat fisika dan kimia keduanya
+                </div>
+
+                <div class="reason-cards">
+                    <div class="reason-card">
+                        <h4>⚖️ Massa Jenis</h4>
+                        <p>Minyak memiliki massa jenis lebih kecil daripada air sehingga mengapung di permukaannya</p>
+                    </div>
+
+                    <div class="reason-card">
+                        <h4>🔗 Ikatan Hidrogen</h4>
+                        <p>Molekul air saling terikat kuat melalui ikatan hidrogen, sedangkan minyak tidak dapat membentuk ikatan ini</p>
+                    </div>
+
+                    <div class="reason-card">
+                        <h4>⚡ Energi Gibbs</h4>
+                        <p>Pencampuran minyak dan air akan meningkatkan energi Gibbs sistem, sehingga tidak terjadi secara spontan</p>
+                    </div>
+
+                    <div class="reason-card">
+                        <h4>💧 Tegangan Permukaan</h4>
+                        <p>Air memiliki tegangan permukaan tinggi yang menolak masuknya molekul minyak</p>
+                    </div>
+
+                    <div class="reason-card">
+                        <h4>🌀 Gaya Tarik London</h4>
+                        <p>Gaya antar molekul minyak hanya berupa gaya London (gaya dispersi) yang lemah, sehingga tidak mampu menarik molekul air yang memiliki gaya tarik lebih kuat</p>
+                    </div>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px; font-weight: 600; text-align: center; color: #667eea;">
+                    📊 Akibatnya, kedua zat tetap terpisah membentuk dua lapisan stabil dengan minyak di atas dan air di bawah
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
                 <div class="card">
                     <h3>🎯 Metode Lain: Solubilisasi Misel</h3>
                     <p>Cara lain untuk "mencampurkan" minyak dan air adalah dengan membuat <strong>MISEL</strong></p>
